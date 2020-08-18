@@ -4111,13 +4111,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SkillsService", function() { return SkillsService; });
 /* harmony import */ var _utils_queryUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/queryUtils */ "./src/app/core/utils/queryUtils.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../environments/environment.prod */ "./src/environments/environment.prod.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
 
 
 
-// const BASE_URL = environment.SERVERLESS_API_ENDPOINT;
-const BASE_URL = 'http://localhost:3000/';
+
+const BASE_URL = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_2__["environment"].SERVERLESS_API_ENDPOINT;
 class SkillsService {
     constructor(httpClient) {
         this.httpClient = httpClient;
@@ -4128,7 +4129,7 @@ class SkillsService {
         this.getSkills = (page, items, sortby, active) => {
             sortby = Object(_utils_queryUtils__WEBPACK_IMPORTED_MODULE_0__["convertToSortQueryString"])(sortby);
             active = Object(_utils_queryUtils__WEBPACK_IMPORTED_MODULE_0__["convertToActiveQueryString"])(active);
-            return this.httpClient.get(`https://bugy1jhj2b.execute-api.us-east-1.amazonaws.com/dev/skills/all?page=${page}&limit=${items}&sortby=${sortby}&approved=${active}`);
+            return this.httpClient.get(`${this.getUrl()}/all?page=${page}&limit=${items}&sortby=${sortby}&approved=${active}`);
         };
         this.getUrl = () => {
             return `${BASE_URL}${this.model}`;
@@ -4150,14 +4151,14 @@ class SkillsService {
         };
     }
 }
-SkillsService.ɵfac = function SkillsService_Factory(t) { return new (t || SkillsService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
+SkillsService.ɵfac = function SkillsService_Factory(t) { return new (t || SkillsService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
 SkillsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: SkillsService, factory: SkillsService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](SkillsService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }]; }, null); })();
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),
@@ -4204,6 +4205,25 @@ const convertToActiveQueryString = (option) => {
         case 'Unapproved': return 'false';
         default: return option;
     }
+};
+
+
+/***/ }),
+
+/***/ "./src/environments/environment.prod.ts":
+/*!**********************************************!*\
+  !*** ./src/environments/environment.prod.ts ***!
+  \**********************************************/
+/*! exports provided: environment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+const environment = {
+    production: true,
+    SPRINGBOOT_API_ENDPOINT: 'https://spring.azizstark.tech/',
+    SERVERLESS_API_ENDPOINT: 'https://bugy1jhj2b.execute-api.us-east-1.amazonaws.com/dev/'
 };
 
 

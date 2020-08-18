@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectsService", function() { return ProjectsService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _utils_queryUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/queryUtils */ "./src/app/core/utils/queryUtils.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../environments/environment.prod */ "./src/environments/environment.prod.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
@@ -91,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const BASE_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].SPRINGBOOT_API_ENDPOINT;
+const BASE_URL = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_2__["environment"].SPRINGBOOT_API_ENDPOINT;
 class ProjectsService {
     constructor(httpClient) {
         this.httpClient = httpClient;
@@ -255,25 +255,6 @@ const ClientValidation = (client) => {
     }
     errors.isValid = isValid;
     return errors;
-};
-
-
-/***/ }),
-
-/***/ "./src/environments/environment.prod.ts":
-/*!**********************************************!*\
-  !*** ./src/environments/environment.prod.ts ***!
-  \**********************************************/
-/*! exports provided: environment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-const environment = {
-    production: true,
-    SPRINGBOOT_API_ENDPOINT: 'https://spring.azizstark.tech/',
-    SERVERLESS_API_ENDPOINT: 'https://bugy1jhj2b.execute-api.us-east-1.amazonaws.com/dev/'
 };
 
 

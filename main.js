@@ -722,7 +722,7 @@ const environment = {
     production: false,
     // SERVERLESS_API_ENDPOINT: 'http://localhost:3000/',
     // SPRINGBOOT_API_ENDPOINT: 'http://localhost:3000/'
-    SPRINGBOOT_API_ENDPOINT: 'http://ec2-54-197-75-37.compute-1.amazonaws.com:8080/',
+    SPRINGBOOT_API_ENDPOINT: 'https://spring.azizstark.tech/',
     SERVERLESS_API_ENDPOINT: 'https://bugy1jhj2b.execute-api.us-east-1.amazonaws.com/dev/'
 };
 /*
